@@ -12,14 +12,63 @@
 
 </head>
 <body>
-    
+    <!--SECTION NAVBAR -->
     <nav class="navbar bg-black">
   
         <div class="container-fluid" >
 
-          <a href="">
+          
+          <!--MODAL-->
+          
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <img src="https://i.postimg.cc/hGjt1tB1/icons8-name-64.png" alt="user" style="opacity:0.8" height="50" width="50">
-          </a>
+          </button>
+
+
+          <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content modalStyle">
+
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel" style="color:whitesmoke">Iniciar Sesion</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!--CUERPO DEL MODAL-->
+                <div class="modal-body">
+
+                  
+                  <form action="">
+                    <ul>
+                      <li>
+                        <label for="email" class="labelStyle">Correo Electronico </label>
+                        <br>
+                        <input class="inputBox" type="email" id="email" name="user_email">
+                      </li>
+              <br>
+                      <li >
+                        <label for="password" class="labelStyle">Contraseña </label>
+                        <br>
+                        <input class="inputBox" type="password" id="password" name="user_password">
+                      </li>
+                    </ul>
+
+                    <a href="./" class="p-1 texto" > Has olvidado tu contraseña?</a>
+
+                  </form>
+                </div>
+
+                <!------->
+                <div class="modal-footer">
+                  <button type="button" class="btn buttonStyle"> Registrarse</button>
+                  <button type="button" class="btn buttonStyle" data-bs-dismiss="modal">Cancelar</button>
+                  <button  type="button" class="btn buttonStyle">Aceptar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--------->
 
           <a class="navbar-brand logoClass " style="opacity:0.95" href="index.html">
          <img src="https://i.postimg.cc/brxwCpPw/KiraLogo.png"  alt="Logo" width="40" height="60" class="d-inline-block" > KiraStore</a>
@@ -27,6 +76,71 @@
 
       </nav>
 
+<!-------------->
+
+
+    <section>
+      <div class="carrousel carousel">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" "></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <figure>
+                <img src="https://fotografias-neox.atresmedia.com/clipping/cmsimages02/2016/05/20/2D2D6AEA-7471-4616-A4F2-E1EE5CDCFFA0/98.jpg?crop=1920,1080,x0,y0&width=1900&height=1069&optimize=high&format=webply" height="840px" class="d-flex w-100 " alt="...">
+                <div class="capa carousel-caption d-none d-md-block">
+                  <h2>Undertale</h2>
+                  <p>UNDERTALE! El juego RPG en el que no debes lastimar a nadie.</p>
+                </div>
+              </figure>
+            </div>
+            <div class="carousel-item">
+              <figure>
+                <img src="https://i0.wp.com/pxlbbq.com/wp-content/uploads/2014/12/papers_please_logo.png?fit=1064%2C585&ssl=1" height="840px"  class="d-flex w-100" alt="...">
+                <div class="capa carousel-caption d-none d-md-block">
+                  <h2>Papers, please</h2>
+                  <p>¡Enhorabuena! Su nombre ha salido elegido en la lotería de trabajo. Preséntese inmediatamente ante el Ministerio de Admisiones, en el puesto fronterizo de Grestin. Se le proporcionará una vivienda de clase 8 en Grestin Oriental, en la cual podrá alojarse junto a su familia. Gloria a Arstotzka.</p>
+                </div>
+              </figure>
+            </div>
+            <div class="carousel-item">
+              <figure>
+                <img src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6L9Hpkl9EzcISqb1ue0PNH/8bb951e65cadfcc5ac2a5d877f42f61f/sot_w-awards_hero_1600x1000v3_desktop_139180.jpg" height="840px" class="d-flex w-100" alt="...">
+                <div class="capa carousel-caption d-none d-md-block">
+                  <h2>South Park: La vara de la verdad</h2>
+                  <p>De entre los mortíferos campos de batalla del patio de recreo de cuarto curso, un joven héroe se alzará, destinado a ser el salvador de South Park. De los creadores de South Park, Trey Parker y Matt Stone, llega una épica aventura para llegar a ser... guay.</p>
+                </div>
+              </figure>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="categorias">
+        <h2 class="categoriasjuegos">
+          CATEGORIAS
+        </h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <img src="aquiiriaalgo.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
