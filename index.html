@@ -15,16 +15,33 @@
     <!--SECTION NAVBAR -->
     <nav class="navbar bg-black">
   
-        <div class="container-fluid" >
+      <div class="container-fluid" >
+        
+        <div id="administrador" style="display:none">
+          <a href="admin.html">
+            <img src="https://i.postimg.cc/hGjt1tB1/icons8-name-64.png" alt="userplus" style="opacity:0.7" height="55" width="55">
+          </a>
+  
+        </div>
 
-          
-          <!--MODAL-->
-          
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <img src="https://i.postimg.cc/hGjt1tB1/icons8-name-64.png" alt="user" style="opacity:0.8" height="50" width="50">
+
+
+        <div id="dropdownUser" class="dropdown" style="display:none" >
+          <button id="showUser" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            
           </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
 
-
+        
+        <!--MODAL-->
+        <button id="userModal" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <img src="https://i.postimg.cc/3JMgGQDZ/icons8-user-64.png" alt="user" style="opacity:0.8" height="50" width="50">
+        </button>
+        
           <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content modalStyle">
@@ -37,18 +54,18 @@
                 <div class="modal-body">
 
                   
-                  <form action="">
+                  <form name="formularioLogin" action="registro.html">
                     <ul>
                       <li>
                         <label for="email" class="labelStyle">Correo Electronico </label>
                         <br>
-                        <input class="inputBox" type="email" id="email" name="user_email">
+                        <input class="inputBox" type="email" id="emailLog" name="user_email">
                       </li>
               <br>
                       <li >
                         <label for="password" class="labelStyle">Contraseña </label>
                         <br>
-                        <input class="inputBox" type="password" id="password" name="user_password">
+                        <input class="inputBox" type="password" id="passwordLog" name="user_password">
                       </li>
                     </ul>
 
@@ -61,7 +78,7 @@
                 <div class="modal-footer">
                 <a href="./registro.html"> <button type="button" class="btn buttonStyle"> Registrarse</button> </a> 
                   <button type="button" class="btn buttonStyle" data-bs-dismiss="modal">Cancelar</button>
-                  <button  type="submit" class="btn buttonStyle">Aceptar</button>
+                  <button   id="boton"  type="button" class="btn buttonStyle" data-bs-dismiss="modal" >Aceptar</button>
                 </div>
               </div>
             </div>
@@ -142,7 +159,7 @@
       </div>
     </section>
 
-
+    <script src="./app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
