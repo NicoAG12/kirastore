@@ -6,9 +6,7 @@ const boton = document.getElementById("boton")
 const admin=doc.getElementById("administrador")
 const userModal = doc.getElementById("userModal")
 const dropDown = doc.getElementById("dropdownUser")
-
 const prueba = doc.getElementById("showUser")
-
 const userList = JSON.parse(localStorage.getItem("userList"))
 
 boton.addEventListener("click", (e) => {
@@ -33,7 +31,7 @@ else if(login){
     alert ("Inicio de sesion correcto")
     userModal.style.display = "none";
     dropDown.style.display = null;
-    showUser.innerHTML = login.user_name;
+    prueba.innerHTML = login.user_name;
 }
 
 })
