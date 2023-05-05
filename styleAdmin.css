@@ -1,0 +1,25 @@
+
+body{
+    background-color:black;
+}
+
+.containerCRUD{
+    height: 550px;
+    width: 1000px;
+    background-color: red;
+    border: 2px;
+    border-color:blue
+}
+
+.buttonStyle{
+    background-color: black;
+    color: white;
+    font-family:'Raleway',sans-serif;
+    border-color:#47026c;
+    border-radius: 53px 53px 53px 53px;
+-moz-border-radius: 53px 53px 53px 53px;
+-webkit-border-radius: 53px 53px 53px 53px;
+border: 0px solid #000000;
+
+
+}

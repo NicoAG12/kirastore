@@ -67,6 +67,7 @@ ul{
 .inputBox:focus{
     animation:pulse;
     animation-duration: 1s;
+
     border-color: #47026c;
     outline: none;
     box-shadow: 0 0 3px #c86bfa;
