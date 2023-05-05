@@ -214,3 +214,12 @@ ul{
     padding: 3%
 
 }
+
+.catjuego h2{
+    text-align: center;
+    padding-top: 17%;
+    color:whitesmoke;
+    font-family:"Raleway",sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+}
