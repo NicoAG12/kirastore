@@ -36,28 +36,6 @@ else if(login){
     showUser.innerHTML = login.user_name;
 }
 
-
-/*
-
-if (datos.email == "admin" && datos.password == "admin"){
-   
-a
-}
-*/
-    /*
-
-
-   else if(datos.email == userList.email && datos.password == "1234"){
-      alert ("INICIO CORRECTO")
-    }
-
-    else{
-        alert("Datos incorrectos")
-    }
-
-    */
-
-
 })
 
 
