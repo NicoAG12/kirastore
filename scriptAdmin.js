@@ -5,37 +5,19 @@ const descripcionJuegoInput=document.getElementById("descripcionJuego")
 
 const addButton = document.getElementById("buttonAdd")
 
-const juegos = []
 
-const juego = {
-    codigo : "",
-    nombre : "",
-    descripcion : "",
+let añadirParrafo = (x) =>{
+    const nuevoParrafo = document.createElement("p");
+    const newText = document.createTextNode(x.value);
+    nuevoParrafo.appendChild(newText);
+    const nuevoDiv = document.getElementById("containerCRUD")
+    const hr = document.createElement("hr");
+    nuevoDiv.appendChild(nuevoParrafo);
 }
 
-localStorage.setItem("juegos",JSON.stringify(juegos));
+addButton.addEventListener("click",(e) =>{
+    e.preventDefault;
 
-addButton.addEventListener("click", (e) =>{
-    e.preventDefault();
-
-    
-   localStorage.setItem("juegos",JSON.stringify(juegos));
-    
-   if (nombreJuegoInput.value === "" || codigoJuegoInput.value == "" || descripcionJuegoInput == ""){
-    alert("Todos los campos son obligatorios")
-    return;
-   }
-
-   juego.codigo = codigoJuegoInput.value
-
-   juego.nombre = nombreJuegoInput.value
-
-   juego.descripcion = descripcionJuegoInput.value
-
-   agregarJuego();
-
+    añadirParrafo(prompt("Ingrese algo"));
 })
-
-const agregarJuego = () => {
-}
 
