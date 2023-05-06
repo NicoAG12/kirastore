@@ -2,7 +2,7 @@
 const codigoJuegoInput = document.getElementById("codigoJuego");
 const nombreJuegoInput=document.getElementById("nombreJuego");
 const descripcionJuegoInput=document.getElementById("descripcionJuego");
-const buttonAgregarJuego = document.getElementById("buttonAceptar")
+const buttonAgregarJuego = document.getElementById("buttonAceptarAdmin")
 const contenedor = document.getElementById("crudBox");
 
 const URLimagen = document.getElementById("URLimagen");
@@ -16,7 +16,6 @@ const columnaDisp = document.getElementById("4")
 const columnaAcciones = document.getElementById("5")
 
 
-const divMain = document.getElementById("Perro");
 
 const juegos = [];
 
@@ -71,30 +70,12 @@ const anadirJuego = () => {
 
 const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
 
-console.log(gamesJsonParseados);
-
-const crearCard = () => {
-    const newCard = gamesJsonParseados.map((juego)=>{
-        return `  <div class="card" style="width: 18rem;">
-        <img src="${juego.imagen}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${juego.nombre}</h5>
-          <p class="card-text">${juego.descripcion}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div> }`;
-       
-    })
-    
-       divMain.appendChild(newCard);
-}
-
-console.log(divMain);
 
 buttonAgregarJuego.addEventListener("click",(e) => {
     mostrarJuegos();
     anadirJuego();
+    
    
 })
+ 
 
- crearCard();
