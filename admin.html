@@ -16,7 +16,7 @@
   
         <div class="container-fluid d-flex justify-content-center" >
             <a class="navbar-brand logoClass " style="opacity:0.95" href="index.html">
-           <img src="https://i.postimg.cc/brxwCpPw/KiraLogo.png"  alt="Logo" width="40" height="60" class="d-inline-block"></a>
+           <img src="https://i.postimg.cc/brxwCpPw/KiraLogo.png"  id = "img..." alt="Logo" width="40" height="60" class="d-inline-block"></a>
           </div>
         </nav>
       <!--NAVBAR END-->
@@ -40,35 +40,40 @@
                                         <li>
                                             <label for="">Codigo:</label>
                                             <br>
-                                            <input class="inputBox" type="text" id="codigoJuego" value="Ingrese codigo de juego"> 
+                                            <input class="inputBox" type="text" id="codigoJuego" > 
                                         </li>
                                         <br>
                                         <li>
                                             <label for="">Nombre:</label>
                                             <br>
-                                            <input class="inputBox" type="text" id="nombreJuego" value = "Ingrese el nombre del juego">
+                                            <input class="inputBox" type="text" id="nombreJuego">
                                         </li>
                                         <br>
                                         <li>
                                             <label for="">Categoria: </label>
                                             <br>
-                                            <input class="inputBox" type="text" id="categoriaJuego" value="Categoria de Juego">
+                                            <input class="inputBox" type="text" id="categoriaJuego" >
                                           
                                         </li>
                                         <br>
                                         <li>
                                             <label for="">Descripcion:</label>
                                             <br>
-                                            <input class="inputBox" type="text" id="descripcionJuego" value="descripcion de Juego">
+                                            <input class="inputBox" type="text" id="descripcionJuego" >
                                         </li>
                                         <br>
-
+                                        
+                                        <li>
+                                          <label for="">Imagen: </label>
+                                          <br>
+                                          <input type="text" id="URLimagen">
+                                        </li>
                                     </ul>
                                 </form>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                              <button type="button" id="botonAceptar" class="btn btn-primary">Agregar juego</button>
+                              <button type="button" id="buttonAceptar" class="btn btn-primary">Agregar juego</button>
                             </div>
                           </div>
                         </div>

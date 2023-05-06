@@ -2,7 +2,7 @@
 const doc = document;
 const userEmail = doc.getElementById("emailLog");
 const userPassword=doc.getElementById("passwordLog");
-const boton = document.getElementById("boton")
+const boton = document.getElementById("buttonAceptar")
 const admin=doc.getElementById("administrador")
 const userModal = doc.getElementById("userModal")
 const dropDown = doc.getElementById("dropdownUser")
@@ -24,7 +24,7 @@ if (login.user_email == "admin" && login.user_password == "admin"){
     admin.classList.add("animate__animated");
     admin.classList.add("animate__fadeIn");
     userModal.style.display = "none";
-    dropDown.style.display=none;
+    dropDown.style.display="none";
 }
 
 else if(login){
