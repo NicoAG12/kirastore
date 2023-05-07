@@ -7,7 +7,7 @@ const admin=doc.getElementById("administrador")
 const userModal = doc.getElementById("userModal")
 const dropDown = doc.getElementById("dropdownUser")
 const prueba = doc.getElementById("showUser")
-const divMain = doc.getElementById("perro");
+const divMain = doc.getElementById("contenedorCards");
 const userList = JSON.parse(localStorage.getItem("userList"))
 const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
 
@@ -44,13 +44,13 @@ const crearCard = () => {
 
     const newCard = gamesJsonParseados.map((juego)=>{
         return `  <div class="card" style="width: 18rem;">
-        <img src="${juego.imagen}" class="card-img-top" alt="...">
+        <img src="${juego.imagen}" class="card-img-top" alt="${juego.nombre}">
         <div class="card-body">
           <h5 class="card-title">${juego.nombre}</h5>
           <p class="card-text">${juego.descripcion}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary">Ir a la pagina del juego</a>
         </div>
-      </div> }`;
+      </div> }`; 
        
     })  
 
