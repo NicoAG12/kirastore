@@ -2,14 +2,15 @@
 const doc = document;
 const userEmail = doc.getElementById("emailLog");
 const userPassword=doc.getElementById("passwordLog");
-const boton = document.getElementById("boton")
+const boton = document.getElementById("buttonAceptar")
 const admin=doc.getElementById("administrador")
 const userModal = doc.getElementById("userModal")
 const dropDown = doc.getElementById("dropdownUser")
-
 const prueba = doc.getElementById("showUser")
-
+const divMain = doc.getElementById("perro");
 const userList = JSON.parse(localStorage.getItem("userList"))
+const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
+
 
 boton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -26,41 +27,34 @@ if (login.user_email == "admin" && login.user_password == "admin"){
     admin.classList.add("animate__animated");
     admin.classList.add("animate__fadeIn");
     userModal.style.display = "none";
-    dropDown.style.display=none;
+    dropDown.style.display="none";
 }
 
 else if(login){
     alert ("Inicio de sesion correcto")
     userModal.style.display = "none";
     dropDown.style.display = null;
-    showUser.innerHTML = login.user_name;
+    prueba.innerHTML = login.user_name;
 }
-
-
-/*
-
-if (datos.email == "admin" && datos.password == "admin"){
-   
-a
-}
-*/
-    /*
-
-
-   else if(datos.email == userList.email && datos.password == "1234"){
-      alert ("INICIO CORRECTO")
-    }
-
-    else{
-        alert("Datos incorrectos")
-    }
-
-    */
-
 
 })
 
 
+const crearCard = () => {
 
+    const newCard = gamesJsonParseados.map((juego)=>{
+        return `  <div class="card" style="width: 18rem;">
+        <img src="${juego.imagen}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${juego.nombre}</h5>
+          <p class="card-text">${juego.descripcion}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> }`;
+       
+    })  
 
+    divMain.insertAdjacentHTML(`beforeend`,newCard);    
+}
 
+crearCard();

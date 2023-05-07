@@ -28,15 +28,6 @@ registerButton.addEventListener("click", (e) =>{
             localStorage.setItem("userList",JSON.stringify(usuario));
             alert("Registro completado!")
         }
-    
-/*
-    else{
-        usuario.push(userRegister);
-
-      localStorage.setItem("userList",JSON.stringify(usuario));
-    }
-    
-*/
 
 })
 
