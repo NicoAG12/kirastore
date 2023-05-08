@@ -68,6 +68,8 @@ const crearCard = () => {
     })  
 
     divMain.insertAdjacentHTML(`beforeend`,newCard);    
+
+    localStorage.setItem("dataCards",JSON.stringify(newCard));
 }
 
 

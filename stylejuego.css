@@ -10,13 +10,7 @@ body{
 .cupheadvideo{
     position: relative;
     overflow: hidden;
-    opacity:25%;
 }
-
-.cupheadvideo:hover{
-    opacity:100%;
-}
-
 
 .buttonStyle{
     width: 120px;
@@ -28,25 +22,12 @@ body{
     border-radius : 80px;
 }
 
-.cupheadtext{
+.textoTitulo{
     opacity:100%;
-    position:absolute;
-    font-size: 200px;
+    font-size: 60px;
     color: white;
-    margin-top: 15%;
-    font-family:'Raleway',sans-serif;
-    z-index: 100;
-  
-}
-
-.cupheadtitle{
-    position:absolute;
-    font-size: 40px;
-    color: white;
-    margin-top: 28%;
-    font-family:'Raleway',sans-serif;
-    z-index: 100;
-  
+    margin-top: 10px;
+    font-family:'Raleway',sans-serif; 
 }
 
 .overlay{
