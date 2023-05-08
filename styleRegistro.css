@@ -9,10 +9,21 @@ ul{
     list-style: none;
 }
 
+@media (max-width:950px){
+    .imageBox{
+        display:none;
+    }
+    .registerBox{
+        width: 100%;
+    }
+    
+    
+}
+
 .registerContainer{
     background-color: rgb(32, 32, 32,0.5);
-    width: 800px;
-    height: 700px;
+        width: 800px;
+        height: 700px;
 }
 
 .registerBox{
@@ -40,6 +51,7 @@ ul{
     background-position:center;
     
 }
+
 
 .labelStyle{
     color:whitesmoke;

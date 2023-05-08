@@ -10,6 +10,24 @@ ul{
     list-style:none
 }
 
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+@media (max-width:950px)  {
+    .juegodestacado{
+        display:none;
+    }
+    
+}
+
+@media (min-width:950px){
+    .juegoMobile{
+        display:none;
+    }
+}
+
+
 
 .texto{
     color:whitesmoke;

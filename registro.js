@@ -21,6 +21,11 @@ registerButton.addEventListener("click", (e) =>{
         user_email : document.getElementById("userMail").value,
     }
 
+        if (userRegister.user_name == "" || userRegister.user_password == "" || userRegister.user_email == ""){
+            alert("Por favor complete todos los campos")
+            return;
+        }
+
         if (JSON.parse(localStorage.getItem("userList").includes(userRegister.user_name)) || JSON.parse(localStorage.getItem("userList").includes(userRegister.user_email))  ){
             alert("Usuario o mail existentes, ingrese nuevamente")
         } else{

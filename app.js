@@ -16,7 +16,7 @@ const botonprueba = document.getElementById("destacado");
 const tituloDestacado = document.getElementById("tituloJuego")
 const descripcionDestacado=document.getElementById("descripcionDestacado");
 const imagenDestacado = document.getElementById("imagenDestacado");
-
+const imagenDestacadoMobile = document.getElementById("imagenMobile");
 
 
 boton.addEventListener("click", (e) => {
@@ -28,6 +28,11 @@ boton.addEventListener("click", (e) => {
     }
 
 const login = userList.find(usuario=>usuario.user_email == datos.email && usuario.user_password == datos.password)
+
+if (!login){
+    alert("No se ha encontrado el usuario");
+    return;
+}
 
 if (login.user_email == "admin" && login.user_password == "admin"){
     admin.style.display = null;
@@ -43,7 +48,6 @@ else if(login){
     dropDown.style.display = null;
     prueba.innerHTML = login.user_name;
 }
-
 })
 
 
@@ -76,6 +80,7 @@ const cambiarDestacado = () =>{
             tituloDestacado.textContent = `${juego.nombre}`;
             descripcionDestacado.textContent = `${juego.descripcion}`;
             imagenDestacado.src = `${juego.imagen}`
+            imagenDestacadoMobile.src = `${juego.imagen}`
             return
         }
     })

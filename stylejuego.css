@@ -18,6 +18,15 @@ body{
 }
 
 
+.buttonStyle{
+    width: 120px;
+    height: 90px;
+    background-color: black;
+    color: white;
+    font-family:'Raleway',sans-serif;
+    border-color:#47026c;
+    border-radius : 80px;
+}
 
 .cupheadtext{
     opacity:100%;
