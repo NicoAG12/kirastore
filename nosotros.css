@@ -4,53 +4,45 @@
 
 body{
     background-color: black;
-    width: 100%;
 }
 
-.cupheadvideo{
-    position: relative;
-    overflow: hidden;
+.nosotrosfoto{
+    display: flex;
+    align-items: center;
 }
 
-.buttonStyle{
-    width: 120px;
-    height: 90px;
-    background-color: black;
-    color: white;
-    font-family:'Raleway',sans-serif;
-    border-color:#47026c;
-    border-radius : 80px;
+.nosotrostitle{
+    padding-top: 5%;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    color:  #c86bfa;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
 }
 
-.textoTitulo{
-    opacity:100%;
-    font-size: 60px;
-    color: white;
-    margin-top: 10px;
-    font-family:'Raleway',sans-serif; 
-    z-index: 100%;
+.nombresnosotros{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    color:  #e4afff;
+    text-align: center;
+    margin-top: 5%;
+
 }
-
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.466);
-    position: absolute;
-}
-
-.gametitle{
-    font-family:'Raleway',sans-serif;
-    font-size: 40px;
-
+.texto{
+    color:whitesmoke;
+    font-family:"Raleway",sans-serif;
     
 }
 
-.gamedesc{
-    font-family:'Raleway',sans-serif; 
-    font-size: 20px;
-    color: whitesmoke;
-    padding: 2%;
+.labelStyle{
+    color:whitesmoke;
+    font-family:'Raleway',sans-serif;
+}
 
+footer{
+    margin-top: 15%;
 }
 
 .registrar_juego{
@@ -60,7 +52,7 @@ body{
     background: linear-gradient(90deg, rgba(71,2,108,1) 0%, rgba(200,107,250,1) 48%, rgba(228,175,255,1) 100%);
     display: flex;
     position: absolute;
-    margin-bottom: 500px;
+    margin-top: 7%;
     
 }
 
