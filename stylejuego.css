@@ -10,9 +10,17 @@ body{
 .cupheadvideo{
     position: relative;
     overflow: hidden;
+    opacity:25%;
 }
 
+.cupheadvideo:hover{
+    opacity:100%;
+}
+
+
+
 .cupheadtext{
+    opacity:100%;
     position:absolute;
     font-size: 200px;
     color: white;
@@ -76,6 +84,7 @@ body{
 }
 
 .registrarme{
+    border:none;
     font-family:'Raleway',sans-serif; 
     font-size: 20px;
     color: whitesmoke;

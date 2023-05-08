@@ -50,12 +50,14 @@ else if(login){
 const crearCard = () => {
 
     const newCard = gamesJsonParseados.map((juego)=>{
-        return `  <div class="card" style="width: 18rem;">
-        <img src="${juego.imagen}" class="card-img-top" alt="${juego.nombre}">
+        return `  <div class="card cardStyle" style="width: 18rem;">
+        <img src="${juego.imagen}" class="card-img-top p-2" alt="${juego.nombre}">
         <div class="card-body">
           <h5 class="card-title">${juego.nombre}</h5>
+          <hr style="color:white">
           <p class="card-text">${juego.descripcion}</p>
-          <a href="#" class="btn btn-primary">Ir a la pagina del juego</a>
+          <hr style="color:white">
+          <a href="./juego.html" class="btn buttonStyle">Ir a la pagina del juego</a>
         </div>
       </div> }`; 
        
