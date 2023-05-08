@@ -11,6 +11,13 @@ const divMain = doc.getElementById("contenedorCards");
 const userList = JSON.parse(localStorage.getItem("userList"))
 const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
 
+const botonprueba = document.getElementById("destacado");
+
+const tituloDestacado = document.getElementById("tituloJuego")
+const descripcionDestacado=document.getElementById("descripcionDestacado");
+const imagenDestacado = document.getElementById("imagenDestacado");
+
+
 
 boton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -57,4 +64,24 @@ const crearCard = () => {
     divMain.insertAdjacentHTML(`beforeend`,newCard);    
 }
 
+
+
+const cambiarDestacado = () =>{
+    const idDestacado = prompt("Ingrese ID del juego a destacar");
+
+    gamesJsonParseados.map((juego) => {
+        if (juego.codigo == idDestacado){
+            tituloDestacado.textContent = `${juego.nombre}`;
+            descripcionDestacado.textContent = `${juego.descripcion}`;
+            imagenDestacado.src = `${juego.imagen}`
+            return
+        }
+    })
+}
+
+botonprueba.addEventListener("click",(e)=>{
+    cambiarDestacado();
+})
+
 crearCard();
+
