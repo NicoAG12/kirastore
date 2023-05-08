@@ -25,9 +25,6 @@ const mostrarJuegosEnCRUD = () => {
     const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
     
     gamesJsonParseados.map((juego) => {
-
-      
-
             const parrafoCodigoJuego = document.createElement("p")
             const parrafoNombreJuego = document.createElement("p")
             const parrafoDescripcionJuego = document.createElement("p")
@@ -71,7 +68,14 @@ const mostrarJuegosEnCRUD = () => {
 
 const anadirJuegos = () =>{
 
-   
+    const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
+
+    
+    gamesJsonParseados.map(juego => {
+        if (codigoJuegoInput == juego.codigo){
+            alert("EL JUEGO YA SE ENCUENTRA AGREGADO"); 
+        }
+        else{
             juegos.push({
                 nombre : nombreJuegoInput.value,
                 codigo: codigoJuegoInput.value,
@@ -82,21 +86,37 @@ const anadirJuegos = () =>{
             })
             
             localStorage.setItem("ListaJuegos",JSON.stringify(juegos));  
-            alert("JUEGO AGREGADO!. ACTUALICE LA LISTA")      
+            alert("JUEGO AGREGADO!. ACTUALICE LA LISTA")    
+        }
+    })
+   
+              
 
-            console.log(juegos.video)
 
     
     
 }
 
 
+editarJuego = () =>{
+    const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
+    const idBuscar = prompt("Ingrese el ID del juego a reemplazar");
+     juegoSeleccionado = gamesJsonParseados.filter(juego => idBuscar == juego.codigo);
+          
+}
+
+
+botonEditar.addEventListener("click",(e)=>{
+    editarJuego();
+})
+
 buttonAgregarJuego.addEventListener("click",(e) => {
     anadirJuegos();
+    
 })
 
 buttonActualizar.addEventListener("click",(e) => {
+    
     mostrarJuegosEnCRUD();
 })
  
-
