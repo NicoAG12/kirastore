@@ -6,27 +6,33 @@ const registerButton = document.getElementById("registerButton")
 let arrayUsuarios = [];
 
 registrarUsuario = (userName,userPassword,userEmail) => {
-    let usuario = {
-        nombre : userName,
-        password : userPassword,
-        email : userEmail,
+    if (arrayUsuarios != null){
+
+        let usuario = {
+            nombre : userName,
+            password : userPassword,
+            email : userEmail,
+        }
+    
+        arrayUsuarios.push(usuario);
+        return usuario;
     }
 
-    arrayUsuarios.push(usuario);
-    return usuario;
-}
+    arrayUsuarios = [{
+        nombre : "admin",
+            password : "admin",
+            email : "admin@hotmail.com",
+    }]
+
+    }
 
 guardarDatosUser = () => {
-
-    localStorage.setItem("userList",JSON.stringify(arrayUsuarios));
-
-        obtenerDatosUser();
-
-    
+ localStorage.setItem("userList",JSON.stringify(arrayUsuarios));    
 }
 
 obtenerDatosUser = () => {
     arrayUsuarios = JSON.parse(localStorage.getItem("userList"));
+    guardarDatosUser();
 }
 
 formularioRegistro.addEventListener("submit", (e) =>{
@@ -41,7 +47,10 @@ formularioRegistro.addEventListener("submit", (e) =>{
         formularioRegistro.reset();
 })
 
+        if (arrayUsuarios != null){
+            
+            document.addEventListener("DOMContentLoaded",(obtenerDatosUser()))
+        }
     
-   document.addEventListener("DOMContentLoaded",(obtenerDatosUser()))
 
 
