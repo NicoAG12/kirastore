@@ -1,40 +1,47 @@
 
-
+const formularioRegistro= document.getElementById("formularioRegistro")
 const registerButton = document.getElementById("registerButton")
 
-const usuario = [
-    {
-        user_name: "admin",
-        user_password: "admin",
-        user_email : "admin",
+
+let arrayUsuarios = [];
+
+registrarUsuario = (userName,userPassword,userEmail) => {
+    let usuario = {
+        nombre : userName,
+        password : userPassword,
+        email : userEmail,
     }
-]
 
-localStorage.setItem("userList",JSON.stringify(usuario));
+    arrayUsuarios.push(usuario);
+    return usuario;
+}
 
-registerButton.addEventListener("click", (e) =>{
+guardarDatosUser = () => {
+
+    localStorage.setItem("userList",JSON.stringify(arrayUsuarios));
+
+        obtenerDatosUser();
+
+    
+}
+
+obtenerDatosUser = () => {
+    arrayUsuarios = JSON.parse(localStorage.getItem("userList"));
+}
+
+formularioRegistro.addEventListener("submit", (e) =>{
     e.preventDefault();
 
-    const userRegister = {
-        user_name : document.getElementById("userName").value,
-        user_password : document.getElementById("userPassword").value,
-        user_email : document.getElementById("userMail").value,
-    }
+        let user_name = document.getElementById("userName").value
+        let user_password = document.getElementById("userPassword").value
+        let user_email = document.getElementById("userMail").value
 
-        if (userRegister.user_name == "" || userRegister.user_password == "" || userRegister.user_email == ""){
-            alert("Por favor complete todos los campos")
-            return;
-        }
-
-        if (JSON.parse(localStorage.getItem("userList").includes(userRegister.user_name)) || JSON.parse(localStorage.getItem("userList").includes(userRegister.user_email))  ){
-            alert("Usuario o mail existentes, ingrese nuevamente")
-        } else{
-            usuario.push(userRegister);
-            localStorage.setItem("userList",JSON.stringify(usuario));
-            alert("Registro completado!")
-        }
-
+        registrarUsuario(user_name,user_password,user_email);
+        guardarDatosUser();
+        formularioRegistro.reset();
 })
 
+    
+   document.addEventListener("DOMContentLoaded",(obtenerDatosUser()))
 
 

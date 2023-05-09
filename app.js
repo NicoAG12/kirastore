@@ -6,15 +6,16 @@ const boton = document.getElementById("buttonAceptar")
 const admin=doc.getElementById("administrador")
 const userModal = doc.getElementById("userModal")
 const dropDown = doc.getElementById("dropdownUser")
-const prueba = doc.getElementById("showUser")
+const userDropdown = doc.getElementById("showUser")
 const divMain = doc.getElementById("contenedorCards");
+
 const userList = JSON.parse(localStorage.getItem("userList"))
-const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
 
-const botonprueba = document.getElementById("destacado");
+const juegos = JSON.parse(localStorage.getItem("juegos"))
 
-const tituloDestacado = document.getElementById("tituloJuego")
-const descripcionDestacado=document.getElementById("descripcionDestacado");
+
+const tituloDestacado = document.getElementById("tituloJuego");
+const descripcionDestacado = document.getElementById("descripcionDestacado");
 const imagenDestacado = document.getElementById("imagenDestacado");
 const imagenDestacadoMobile = document.getElementById("imagenMobile");
 
@@ -27,14 +28,16 @@ boton.addEventListener("click", (e) => {
         password: userPassword.value,
     }
 
-const login = userList.find(usuario=>usuario.user_email == datos.email && usuario.user_password == datos.password)
+const login = userList.find(usuario=>usuario.email == datos.email && usuario.password == datos.password)
 
 if (!login){
     alert("No se ha encontrado el usuario");
     return;
 }
 
-if (login.user_email == "admin" && login.user_password == "admin"){
+
+
+if (login.email == "admin@hotmail.com" && login.password == "admin"){
     admin.style.display = null;
     admin.classList.add("animate__animated");
     admin.classList.add("animate__fadeIn");
@@ -46,14 +49,14 @@ else if(login){
     alert ("Inicio de sesion correcto")
     userModal.style.display = "none";
     dropDown.style.display = null;
-    prueba.innerHTML = login.user_name;
+    userDropdown.innerHTML = login.nombre;
 }
 })
 
 
 const crearCard = () => {
 
-    const newCard = gamesJsonParseados.map((juego)=>{
+    const newCard = juegos.map((juego)=>{
         return `  <div class="card cardStyle" style="width: 18rem;">
         <img src="${juego.imagen}" class="card-img-top p-2" alt="${juego.nombre}">
         <div class="card-body">
@@ -68,29 +71,24 @@ const crearCard = () => {
     })  
 
     divMain.insertAdjacentHTML(`beforeend`,newCard);    
-
-    localStorage.setItem("dataCards",JSON.stringify(newCard));
 }
 
 
+const destacado = JSON.parse(localStorage.getItem("juegoDestacado"));
 
 const cambiarDestacado = () =>{
-    const idDestacado = prompt("Ingrese ID del juego a destacar");
+  
 
-    gamesJsonParseados.map((juego) => {
-        if (juego.codigo == idDestacado){
-            tituloDestacado.textContent = `${juego.nombre}`;
-            descripcionDestacado.textContent = `${juego.descripcion}`;
-            imagenDestacado.src = `${juego.imagen}`
-            imagenDestacadoMobile.src = `${juego.imagen}`
-            return
-        }
-    })
+            tituloDestacado.textContent = `${destacado.nombre}`;
+            descripcionDestacado.textContent = `${destacado.descripcion}`;
+            imagenDestacado.src = `${destacado.imagen}`
+            imagenDestacadoMobile.src = `${destacado.imagen}`
+        
+
+
 }
 
-botonprueba.addEventListener("click",(e)=>{
-    cambiarDestacado();
-})
 
-crearCard();
+document.addEventListener("DOMContentLoaded", crearCard());
+document.addEventListener("DOMContentLoaded", cambiarDestacado());
 
