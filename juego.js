@@ -1,12 +1,10 @@
 
 
 const titulo = document.getElementById("tituloJuego");
-const videoJuego = document.getElementById("videoJuego");
 const descripcion = document.getElementById("descripcionJuego");
 const imagenJuego = document.getElementById("imagenJuego");
-const subtitulo = document.getElementById("subtitulo")
-
-
+const subtitulo = document.getElementById("subtitulo");
+const video = document.getElementById("frameVideo");
 
 const mostrarJuego = () =>{
     const datosJuegos = JSON.parse(localStorage.getItem("ListaJuegos"));
@@ -16,9 +14,9 @@ const mostrarJuego = () =>{
         imagenJuego.src = `${juego.imagen}`;
         subtitulo.textContent = `${juego.subtitulo}`;
         descripcion.textContent = `${juego.descripcion}`;
-        videoJuego.src=`${juego.videoJuego}`
-
+        video.src = `${juego.video}`
     })
+
 }
 
 mostrarJuego();
