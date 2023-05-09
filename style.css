@@ -18,12 +18,21 @@ a:link, a:visited, a:active {
     .juegodestacado{
         display:none;
     }
+    .carousel-item{
+        height: 200px;
+    }
     
 }
+
+
 
 @media (min-width:950px){
     .juegoMobile{
         display:none;
+    }
+
+    .carousel-item{
+        height: 700px;
     }
 }
 

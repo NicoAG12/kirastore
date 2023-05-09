@@ -19,6 +19,7 @@ const descripcionDestacado = document.getElementById("descripcionDestacado");
 const imagenDestacado = document.getElementById("imagenDestacado");
 const imagenDestacadoMobile = document.getElementById("imagenMobile");
 
+const cardsJuegos = [];
 
 boton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -57,7 +58,7 @@ else if(login){
 const crearCard = () => {
 
     const newCard = juegos.map((juego)=>{
-        return `  <div class="card cardStyle" style="width: 18rem;">
+        return `<div class="card cardStyle" style="width: 18rem;">
         <img src="${juego.imagen}" class="card-img-top p-2" alt="${juego.nombre}">
         <div class="card-body">
           <h5 class="card-title">${juego.nombre}</h5>
@@ -66,28 +67,31 @@ const crearCard = () => {
           <hr style="color:white">
           <a href="./juego.html" class="btn buttonStyle">Ir a la pagina del juego</a>
         </div>
-      </div> }`; 
-       
-    })  
+      </div>`
+    }) 
 
     divMain.insertAdjacentHTML(`beforeend`,newCard);    
+
 }
+
 
 
 const destacado = JSON.parse(localStorage.getItem("juegoDestacado"));
 
 const cambiarDestacado = () =>{
-  
 
             tituloDestacado.textContent = `${destacado.nombre}`;
             descripcionDestacado.textContent = `${destacado.descripcion}`;
             imagenDestacado.src = `${destacado.imagen}`
             imagenDestacadoMobile.src = `${destacado.imagen}`
-        
-
 
 }
 
+
+
+divMain.addEventListener("click",(e) =>{
+    console.log(e.target);
+})
 
 document.addEventListener("DOMContentLoaded", crearCard());
 document.addEventListener("DOMContentLoaded", cambiarDestacado());

@@ -33,10 +33,15 @@ const guardarDatos = () =>{
 
 
 const eliminarJuego = (codigo) => {
+    let destacado = JSON.parse(localStorage.getItem("juegoDestacado"));
     let indexJuego;
     listaJuegos.forEach((juego,index) => {
         if(juego.codigo == codigo){
             indexJuego = index;
+            if (destacado.codigo == codigo){
+                localStorage.removeItem("juegoDestacado");
+            }
+            
         }
     })
 
@@ -55,7 +60,7 @@ const destacarJuego = (codigo) => {
    let juegoDestacado ={
     nombre : listaJuegos[indexJuego].nombre,
     codigo : listaJuegos[indexJuego].codigo,
-    descripcion: listaJuegos[indexJuego].descripcion ,
+    descripcion: listaJuegos[indexJuego].descripcion,
     subtitulo : listaJuegos[indexJuego].subtitulo,
     video : listaJuegos[indexJuego].video,
     imagen: listaJuegos[indexJuego].imagen,
@@ -64,6 +69,8 @@ const destacarJuego = (codigo) => {
    localStorage.setItem("juegoDestacado", JSON.stringify(juegoDestacado));
 
 }
+
+
 
 
 const editarJuego = (codigo) =>{

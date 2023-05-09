@@ -4,19 +4,20 @@ const titulo = document.getElementById("tituloJuego");
 const descripcion = document.getElementById("descripcionJuego");
 const imagenJuego = document.getElementById("imagenJuego");
 const subtitulo = document.getElementById("subtitulo");
-const video = document.getElementById("frameVideo");
+const video = document.getElementById("videoJuego");
 
-const mostrarJuego = () =>{
-    const datosJuegos = JSON.parse(localStorage.getItem("ListaJuegos"));
 
-    datosJuegos.map(juego =>{
-        titulo.textContent = `${juego.nombre}`;
-        imagenJuego.src = `${juego.imagen}`;
-        subtitulo.textContent = `${juego.subtitulo}`;
-        descripcion.textContent = `${juego.descripcion}`;
-        video.src = `${juego.video}`
-    })
+const juegoDestacado = JSON.parse(localStorage.getItem("juegoDestacado"))
+
+const paginaJuego = () =>{
+    titulo.textContent = `${juegoDestacado.nombre}`;
+    descripcion.textContent = `${juegoDestacado.descripcion}`;
+    imagenJuego.src = `${juegoDestacado.imagen}`;
+    subtitulo.textContent = `${juegoDestacado.subtitulo}`;
+    video.src = `${juegoDestacado.video}`;
 
 }
 
-mostrarJuego();
+document.addEventListener("DOMContentLoaded",paginaJuego());
+
+
