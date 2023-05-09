@@ -13,8 +13,9 @@ registrarUsuario = (userName,userPassword,userEmail) => {
             password : userPassword,
             email : userEmail,
         }
-    
+        
         arrayUsuarios.push(usuario);
+        alert("REGISTRO COMPLETADO")
         return usuario;
     }
 
@@ -23,6 +24,7 @@ registrarUsuario = (userName,userPassword,userEmail) => {
             password : "admin",
             email : "admin@hotmail.com",
     }]
+    alert("SE CREO USUARIO ADMIN POR DEFECTO")
 
     }
 
@@ -41,7 +43,7 @@ formularioRegistro.addEventListener("submit", (e) =>{
         let user_name = document.getElementById("userName").value
         let user_password = document.getElementById("userPassword").value
         let user_email = document.getElementById("userMail").value
-
+        
         registrarUsuario(user_name,user_password,user_email);
         guardarDatosUser();
         formularioRegistro.reset();

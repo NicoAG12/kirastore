@@ -38,14 +38,19 @@ const eliminarJuego = (codigo) => {
     listaJuegos.forEach((juego,index) => {
         if(juego.codigo == codigo){
             indexJuego = index;
-            if (destacado.codigo == codigo){
-                localStorage.removeItem("juegoDestacado");
+            if (destacado != null){
+                if (destacado.codigo == codigo){
+                    localStorage.removeItem("juegoDestacado");
+                    alert("SE ELIMINO EL JUEGO DESTACADO")
+                }
+                
             }
             
         }
     })
 
     listaJuegos.splice(indexJuego,1);
+    alert("Se elimino el juego con exito");
     guardarDatos();
 }
 
@@ -84,23 +89,30 @@ const editarJuego = (codigo) =>{
     switch (opc){
         case 1:
             listaJuegos[indexJuego].nombre = prompt("Ingrese nuevo nombre");
+            alert("Se registraron los cambios")
         break
         case 2:
             listaJuegos[indexJuego].descripcion = prompt("Ingrese nueva descripcion"); 
+            alert("Se registraron los cambios")
 
         break
 
         case 3:
             listaJuegos[indexJuego].subtitulo = prompt("Ingrese nuevo subtitulo");
+            alert("Se registraron los cambios")
 
         break
 
         case 4:
             listaJuegos[indexJuego].video = prompt("Ingrese nueva direccion de video");
+            alert("Se registraron los cambios")
+
         break
 
         case 5:
             listaJuegos[indexJuego].imagen = prompt("Ingrese nueva imagen");
+            alert("Se registraron los cambios")
+
         break
     }
 
