@@ -1,123 +1,4 @@
 
-
-
-/*
-const contenedor = document.getElementById("crudBox");
-const subtituloJuego=document.getElementById("subtituloJuego");
-const buttonActualizar = document.getElementById("buttonActualizar")
-
-const columnaCodigo = document.getElementById("columnaCodigo")
-const columnaNombre = document.getElementById("columnaNombre")
-const columnaDescrip = document.getElementById("columnaDescripcion")
-const columnaDisp = document.getElementById("columnaPublicado")
-const columnaAcciones = document.getElementById("columnaAcciones")
-
-
-
-const juegos = [];
-
-
-const mostrarJuegosEnCRUD = () => {
-    
-    const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
-    
-    gamesJsonParseados.map((juego) => {
-        const parrafoCodigoJuego = document.createElement("p")
-        const parrafoNombreJuego = document.createElement("p")
-        const parrafoDescripcionJuego = document.createElement("p")
-        const parrafoCheckBox = document.createElement("p")
-        const parrafoAcciones=document.createElement("p")
-        
-        const botonBorrar = document.createElement("button")
-        botonBorrar.classList.add("fa-solid", "bg-none" , "fa-trash");
-        const botonEditar = document.createElement("button")
-        botonEditar.classList.add("fa-solid","fa-pen-to-square");
-        const botonCheckBox = document.createElement("INPUT");
-        botonCheckBox.type="checkbox";
-        
-        
-        parrafoCodigoJuego.textContent= `${juego.codigo}`;
-        parrafoNombreJuego.textContent =  `${juego.nombre}`
-        parrafoDescripcionJuego.textContent = `${juego.descripcion}`
-        
-        parrafoCodigoJuego.dataset.id = codigoJuegoInput.value;
-        parrafoNombreJuego.dataset.id = codigoJuegoInput.value;
-        parrafoDescripcionJuego.dataset.id = codigoJuegoInput.value;
-        parrafoCheckBox.dataset.id=codigoJuegoInput.value;
-        parrafoAcciones.dataset.id = codigoJuegoInput.value;
-        
-        
-        parrafoCheckBox.append(botonCheckBox);
-        parrafoAcciones.append(botonBorrar);
-        parrafoAcciones.append(botonEditar);
-        
-        columnaCodigo.appendChild(parrafoCodigoJuego);
-        columnaDisp.appendChild(parrafoCheckBox)
-        columnaNombre.appendChild(parrafoNombreJuego);
-        columnaDescrip.appendChild(parrafoDescripcionJuego);
-        columnaAcciones.appendChild(parrafoAcciones);
-    }
-    
-    ) 
-};
-
-
-
-const anadirJuegos = () =>{
-    
-    const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
-    
-    
-    gamesJsonParseados.map(juego => {
-        if (codigoJuegoInput == juego.codigo){
-            alert("EL JUEGO YA SE ENCUENTRA AGREGADO"); 
-        }
-        else{
-            juegos.push({
-                nombre : nombreJuegoInput.value,
-                codigo: codigoJuegoInput.value,
-                descripcion: descripcionJuegoInput.value,
-                subtitulo : subtituloJuego.value,
-                video : videoJuego.value,
-                imagen: URLimagen.value,
-            })
-            
-            localStorage.setItem("ListaJuegos",JSON.stringify(juegos));  
-            alert("JUEGO AGREGADO!. ACTUALICE LA LISTA")    
-        }
-    })
-    
-    
-    
-    
-    
-    
-}
-
-
-editarJuego = () =>{
-    const gamesJsonParseados = JSON.parse(localStorage.getItem("ListaJuegos"))
-    const idBuscar = prompt("Ingrese el ID del juego a reemplazar");
-    juegoSeleccionado = gamesJsonParseados.filter(juego => idBuscar == juego.codigo);
-    
-}
-
-
-botonEditar.addEventListener("click",(e)=>{
-    editarJuego();
-})
-
-buttonAgregarJuego.addEventListener("click",(e) => {
-    anadirJuegos();
-    
-})
-
-
-buttonActualizar.addEventListener("click",(e) => {
-    
-    mostrarJuegosEnCRUD();
-})
-*/
 const formulario = document.getElementById("formAñadirJuego");
 
 const contenedor = document.getElementById("contenedorJuegos");
@@ -125,7 +6,7 @@ const contenedor = document.getElementById("contenedorJuegos");
 let listaJuegos = [];
 
 
-const añadirJuego = (nombre,codigo,descripcion,subtitulo,video,imagen) =>{
+const añadirJuego = (codigo,nombre,descripcion,subtitulo,video,imagen) =>{
     
     let juego = {
         nombre : nombre,
@@ -144,6 +25,28 @@ const añadirJuego = (nombre,codigo,descripcion,subtitulo,video,imagen) =>{
 const guardarDatos = () =>{
     localStorage.setItem("juegos",JSON.stringify(listaJuegos))
     mostrarDatos();
+}
+
+
+const eliminarJuego = (codigo) => {
+    let indexJuego;
+    listaJuegos.forEach((juego,index) => {
+        if(juego.codigo == codigo){
+            indexJuego == index;
+        }
+    })
+
+    listaJuegos.splice(indexJuego,1);
+    guardarDatos();
+}
+
+const editarJuego = (codigo) =>{
+    listaJuegos.forEach((juego,index) => {
+        if(juego.codigo == codigo){
+            indexJuego == index;
+          
+        }
+    })
 }
 
 
@@ -181,6 +84,17 @@ document.addEventListener("DOMContentLoaded", mostrarDatos());
 
 contenedor.addEventListener("click",(e)=>{
    e.preventDefault()
-   console.log(e);
+    console.log(e.target);
+    if(e.target.innerHTML == "edit" || e.target.innerHTML == "delete"){
+     let codigo =  contenedor.childNodes[0].childNodes[2].innerHTML
+        if (e.target.innerHTML == "edit"){
+            editarJuego(codigo);
+        }
+
+        if (e.target.innerHTML == "delete"){
+            eliminarJuego(codigo);
+        }
+    }
+
 })
 
