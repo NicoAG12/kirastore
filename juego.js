@@ -3,7 +3,7 @@
 const titulo = document.getElementById("tituloJuego");
 const descripcion = document.getElementById("descripcionJuego");
 const imagenJuego = document.getElementById("imagenJuego");
-const subtitulo = document.getElementById("subtitulo");
+const subtitulo = document.getElementById("subtituloJuego");
 const video = document.getElementById("videoJuego");
 
 
@@ -15,7 +15,6 @@ const paginaJuego = () =>{
     imagenJuego.src = `${juegoDestacado.imagen}`;
     subtitulo.textContent = `${juegoDestacado.subtitulo}`;
     video.src = `${juegoDestacado.video}`;
-
 }
 
 document.addEventListener("DOMContentLoaded",paginaJuego());

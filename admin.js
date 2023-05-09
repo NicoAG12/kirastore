@@ -21,7 +21,6 @@ const añadirJuego = (codigo,nombre,descripcion,subtitulo,video,imagen) =>{
         imagen: imagen,
     }
     listaJuegos.push(juego);
-
     return juego;
 }
 
@@ -66,8 +65,8 @@ const destacarJuego = (codigo) => {
     nombre : listaJuegos[indexJuego].nombre,
     codigo : listaJuegos[indexJuego].codigo,
     descripcion: listaJuegos[indexJuego].descripcion,
-    subtitulo : listaJuegos[indexJuego].subtitulo,
     video : listaJuegos[indexJuego].video,
+    subtitulo : listaJuegos[indexJuego].subtitulo,
     imagen: listaJuegos[indexJuego].imagen,
    }
 
@@ -144,7 +143,7 @@ formulario.addEventListener("submit",(e)=>{
     let nombreJuegoInput=document.getElementById("nombreJuego").value;
     let descripcionJuegoInput=document.getElementById("descripcionJuego").value;
     let URLimagenInput = document.getElementById("URLimagen").value;
-    let subtituloInput = document.getElementById("subtituloJuego".value);
+    let subtituloInput = document.getElementById("subtituloJuego").value;
     let videoJuegoInput = document.getElementById("videoJuego").value;
 
     añadirJuego(codigoJuegoInput,nombreJuegoInput,descripcionJuegoInput,subtituloInput,videoJuegoInput,URLimagenInput)
