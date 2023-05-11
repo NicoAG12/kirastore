@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  width: 100%;
+}
+
+.cupheadvideo {
+  position: relative;
+  overflow: hidden;
+}
+
+.buttonStyle {
+  width: 120px;
+  height: 90px;
+  background-color: black;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  border-color: #47026c;
+  border-radius: 80px;
+}
+
+.textoTitulo {
+  opacity: 100%;
+  font-size: 60px;
+  color: white;
+  margin-top: 10px;
+  font-family: "Raleway", sans-serif;
+  z-index: 100%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.466);
+  position: absolute;
+}
+
+.gametitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+}
+
+.gamedesc {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  padding: 2%;
+}
+
+.registrar_juego {
+  width: 100%;
+  height: 100px;
+  background: rgb(71, 2, 108);
+  background: linear-gradient(
+    90deg,
+    rgba(71, 2, 108, 1) 0%,
+    rgba(200, 107, 250, 1) 48%,
+    rgba(228, 175, 255, 1) 100%
+  );
+  display: flex;
+  position: absolute;
+  margin-bottom: 500px;
+}
+
+.registrarte_ya {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  display: flex;
+  justify-content: flex-start;
+  padding: 2%;
+  position: relative;
+}
+
+.registrarme {
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  background-color: #47026c;
+  border-radius: 15px;
+  text-decoration: none;
+  height: 50%;
+  width: 100%;
+}

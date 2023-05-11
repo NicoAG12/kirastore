@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  background-color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (max-width: 950px) {
+  .imageBox {
+    display: none;
+  }
+  .registerBox {
+    width: 100%;
+  }
+}
+
+.registerContainer {
+  background-color: rgb(32, 32, 32, 0.5);
+  width: 800px;
+  height: 700px;
+}
+
+.registerBox {
+  background-color: none;
+  width: 400px;
+  height: 300px;
+}
+
+.text {
+  color: whitesmoke;
+  font-family: "raleway", sans-serif;
+  font-size: 25px;
+}
+
+.text2 {
+  color: whitesmoke;
+  opacity: 0.8;
+  font-family: "Bruno Ace SC", cursive;
+}
+.imageBox {
+  width: 400px;
+  height: 670px;
+  background-image: url("https://i.postimg.cc/jq9q2VYM/unnamed-8da26b03-7124-417e-bf7b-.jpg");
+  background-position: center;
+}
+
+.labelStyle {
+  color: whitesmoke;
+  font-family: "Raleway", sans-serif;
+}
+.buttonStyle {
+  background-color: black;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  border-color: #47026c;
+  margin-left: 30px;
+}
+.modalStyle {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: #47026c;
+}
+.inputBox {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
+.inputBox:focus {
+  animation: pulse;
+  animation-duration: 1s;
+
+  border-color: #47026c;
+  outline: none;
+  box-shadow: 0 0 3px #c86bfa;
+}

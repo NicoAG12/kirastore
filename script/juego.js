@@ -9,7 +9,7 @@ const video = document.getElementById("videoJuego");
 
 const juegoDestacado = JSON.parse(localStorage.getItem("juegoDestacado"))
 
-const paginaJuego = () =>{
+const paginaJuego = () => {
     titulo.textContent = `${juegoDestacado.nombre}`;
     descripcion.textContent = `${juegoDestacado.descripcion}`;
     imagenJuego.src = `${juegoDestacado.imagen}`;
@@ -17,7 +17,6 @@ const paginaJuego = () =>{
     video.src = `${juegoDestacado.video}`;
 
 }
-
-document.addEventListener("DOMContentLoaded",paginaJuego());
+document.addEventListener("DOMContentLoaded", paginaJuego());
 
 
