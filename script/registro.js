@@ -7,6 +7,13 @@ let arrayUsuarios = [];
 
 registrarUsuario = (userName, userPassword, userEmail) => {
     if (arrayUsuarios != null) {
+        arrayUsuarios.forEach(usuario => {
+            if (usuario.nombre == userName || usuario.email == userEmail) {
+                alert("Error!. Nombre de usuario o email ya existentes. Por favor ingrese nuevamente")
+                return;
+            }
+        })
+
 
         let usuario = {
             nombre: userName,
