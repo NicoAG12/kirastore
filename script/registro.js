@@ -7,31 +7,48 @@ let arrayUsuarios = [];
 
 registrarUsuario = (userName, userPassword, userEmail) => {
     if (arrayUsuarios != null) {
-        arrayUsuarios.forEach(usuario => {
-            if (usuario.nombre == userName || usuario.email == userEmail) {
-                alert("Error!. Nombre de usuario o email ya existentes. Por favor ingrese nuevamente")
-                return;
+
+        userValidation = arrayUsuarios.every(usuario => {
+            if (usuario.nombre === userName || usuario.email === userEmail) {
+                return false
+            }
+            else {
+                return true
             }
         })
 
 
-        let usuario = {
-            nombre: userName,
-            password: userPassword,
-            email: userEmail,
+        if (userValidation === false) {
+            alert("ERROR!. Usuario o email existentes, ingrese nuevamente")
+        } else {
+
+            if (arrayUsuarios === null) {
+                arrayUsuarios = [{
+                    nombre: "admin",
+                    password: "admin",
+                    email: "admin@hotmail.com",
+                }]
+                alert("SE CREO USUARIO ADMIN POR DEFECTO")
+            } else {
+
+                let usuario = {
+                    nombre: userName,
+                    password: userPassword,
+                    email: userEmail,
+                }
+
+                arrayUsuarios.push(usuario);
+                alert("REGISTRO COMPLETADO")
+                return usuario;
+            }
+
+
         }
 
-        arrayUsuarios.push(usuario);
-        alert("REGISTRO COMPLETADO")
-        return usuario;
+
+
     }
 
-    arrayUsuarios = [{
-        nombre: "admin",
-        password: "admin",
-        email: "admin@hotmail.com",
-    }]
-    alert("SE CREO USUARIO ADMIN POR DEFECTO")
 }
 
 guardarDatosUser = () => {
