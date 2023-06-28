@@ -38,7 +38,7 @@ boton.addEventListener("click", (e) => {
 
 
 
-    if (login.email == "admin@hotmail.com" && login.password == "admin") {
+    if (login.email === "admin@hotmail.com" && login.password === "admin") {
         admin.style.display = null;
         admin.classList.add("animate__animated");
         admin.classList.add("animate__fadeIn");
